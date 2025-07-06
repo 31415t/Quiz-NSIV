@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QCM NSIV - Haïti</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hamburger pour mobile -->
+<div id="hamburger" onclick="toggleSidebar()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<!-- Logo toujours visible -->
+  <div class="logo">QCM NSIV</div>
+<!-- Sidebar pour mobile -->
+<nav id="sidebar" class="sidebar">
+  <a href="#" onclick="navigate('home'); closeSidebar()">Accueil</a>
+  <a href="#" onclick="navigate('articles'); closeSidebar()">Articles</a>
+  <a href="#" onclick="navigate('help'); closeSidebar()">Aide</a>
+</nav>
+
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="#" onclick="navigate('home')">Accueil</a></li>
+        <li><a href="#" onclick="navigate('articles')">Articles</a></li>
+        <li><a href="#" onclick="navigate('help')">Aide</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="page-section">
+      <h1>Joue et Révise pour le Bac</h1>
+      <p>Choisis ta matière, un chapitre, un mode... et que le jeu commence !</p>
+      <form id="quiz-form">
+        <label for="matiere">Matière :</label>
+        <select id="matiere" required>
+          <option value="">-- Choisissez une matière --</option>
+          <option value="biologie">Biologie</option>
+          <option value="physique">Physique</option>
+          <option value="maths">Mathématiques</option>
+          <option value="chimie">Chimie</option>
+        </select>
+
+        <label for="mode">Mode :</label>
+        <select id="mode" required>
+          <option value="">Choisissez un mode</option>
+          <option value="revision">Révision par chapitre (10 QCM)</option>
+          <option value="examen">Examen complet (50 QCM)</option>
+          <option value="chrono">Chrono : 10 bonnes réponses en 1 minute</option>
+        </select>
+
+        <div id="chapitre-zone" style="display:none;">
+          <label for="chapitre">Chapitre :</label>
+          <select id="chapitre">
+            <option value="">Choisissez un chapitre</option>
+          </select>
+        </div>
+
+        <button type="submit" id="start-btn">Commencer le quiz</button>
+      </form>
+
+      <div id="quiz-zone"></div>
+    </section>
+
+    <section id="articles" class="page-section hidden">
+      <h2>Articles pour mieux comprendre</h2>
+      <p>Explore des explications simples sur les notions importantes du programme.</p>
+      <!-- Articles dynamiques ici -->
+    </section>
+
+    <section id="help" class="page-section hidden">
+      <h2>Centre d'aide</h2>
+      <p>Tu es perdu ? Retrouve ici les réponses aux questions fréquentes.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 QCM NSIV – Haïti | Apprendre en jouant. Projet open source</p>
+  </footer>
+
+  <script src="data/biologie.js"></script>
+  <script src="data/physique.js"></script>
+  <script src="data/maths.js"></script>
+  <script src="data/chimie.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
